@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Heuristic usability evaluation of Ehsan and Tabaru, two Saudi charitable donation platforms, by Najah Rami Madani and team." />
+  <title>Usability Evaluation — Ehsan &amp; Tabaru</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="detail-controls"><button type="button" class="detail-lang-toggle" id="langToggle" aria-label="التبديل إلى العربية" title="Switch language / تغيير اللغة"><i class="fa-solid fa-language" aria-hidden="true"></i> <span class="lang-current">العربية</span></button></div>
+  <main class="section pdetail">
+    <div class="pd-head">
+      <div>
+        <div class="pd-num">09</div>
+        <span class="pd-num-label">Project · 4 highlights below</span>
+      </div>
+      <div class="pd-title-section">
+        <h2 class="pd-title">Usability Evaluation — Ehsan &amp; Tabaru Donation Platforms</h2>
+        <div class="pd-meta"><span>Heuristic Evaluation</span><span>Nielsen's 10 Heuristics</span><span>2 Platforms</span><span>NN/G Workbook</span></div>
+      </div>
+    </div>
+
+    <div class="pd-back" style="max-width:1100px;margin:0 auto 2rem;">
+      <a href="index.html" class="btn btn-ghost"><i class="fa-solid fa-chevron-left"></i> Back home</a>
+    </div>
+
+    <div class="pd-body">
+      <h4>Overview</h4>
+      <p>A heuristic usability evaluation of two real, live Saudi charitable-giving platforms: <strong>Ehsan</strong> (website + app, developed by SDAIA) and <strong>Tabaru</strong> (a Ministry of Human Resources and Social Development platform). Both connect donors to vetted charitable causes, aligned with Saudi Vision 2030's push for transparent, accessible giving.</p>
+
+      <h4>What this project taught me</h4>
+      <ul>
+        <li>Applying Jakob Nielsen's 10 Usability Heuristics rigorously to live, production platforms rather than in-class mockups.</li>
+        <li>Prioritizing and severity-rating real issues (0–4 scale) instead of just listing observations.</li>
+        <li>Scoping evaluation tasks precisely: donating to a project, viewing records, cancelling a donation.</li>
+        <li>Using the Nielsen Norman Group Heuristic Evaluation Workbook format for structured, evidence-based findings.</li>
+      </ul>
+
+      <div class="pd-stats">
+        <div class="pd-stat"><span class="pd-stat-num">2</span><span class="pd-stat-label">Platforms Evaluated</span></div>
+        <div class="pd-stat"><span class="pd-stat-num">10</span><span class="pd-stat-label">Nielsen Heuristics</span></div>
+        <div class="pd-stat"><span class="pd-stat-num">4/4</span><span class="pd-stat-label">Top Severity Found</span></div>
+        <div class="pd-stat"><span class="pd-stat-num">5</span><span class="pd-stat-label">Team Members</span></div>
+      </div>
+
+      <h4>Usability goals applied</h4>
+      <p>Effectiveness, efficiency, safety, simplicity, learnability, memorability, and future development — each defined concretely against real donation-flow examples (e.g. verifying donor details before payment, supporting future cryptocurrency donations).</p>
+
+      <h4>Key findings — Ehsan</h4>
+      <ul>
+        <li><strong>User Control &amp; Freedom (4/4):</strong> no "Undo" after actions like modifying data — recommended an Undo button on major operations.</li>
+        <li><strong>Visibility of System Status (3/4):</strong> no progress indicator during donation processing — recommended a loading/progress state.</li>
+        <li><strong>Error Prevention (3/4):</strong> no confirmation before critical actions like donations — recommended a confirmation dialog.</li>
+        <li><strong>Recognition Over Recall (3/4):</strong> "Donation Records" buried in menus — recommended surfacing it on the homepage.</li>
+      </ul>
+
+      <h4>Key findings — Tabaru</h4>
+      <ul>
+        <li><strong>User Control &amp; Freedom (4/4):</strong> no way to retrieve or cancel a completed donation — recommended an emergency-retrieval request flow.</li>
+        <li><strong>Visibility of System Status (3/4):</strong> no clear status shown during donations or page loads.</li>
+        <li><strong>Help &amp; Documentation (3/4):</strong> limited, hard-to-find FAQ — recommended a prominent, searchable Help section.</li>
+        <li><strong>Aesthetic &amp; Minimalist Design (2/4):</strong> disorganized homepage — recommended prioritizing the most-needed charitable projects.</li>
+      </ul>
+
+      <div class="pd-gallery-wrap">
+        <h4>Gallery</h4>
+        <div class="pd-gallery">
+          <a href="images/projects/ehsan/1.webp" target="_blank" rel="noopener" aria-label="Open ehsan project visual 1"><img src="images/projects/ehsan/1.webp" alt="Ehsan and Tabaru heuristic evaluation cover — visual 1" loading="lazy" decoding="async" width="1000" height="625" /></a>
+        </div>
+      </div>
+
+      <h4>Najah's role</h4>
+      <p>Contributed to task scoping, heuristic analysis, and the structured NN/G-format write-up as part of a 5-person team, cross-checking findings between the Ehsan and Tabaru evaluations for consistency.</p>
+    </div>
+  </main>
+  <script defer src="translations.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="animations.js"></script>
+</body>
+</html>

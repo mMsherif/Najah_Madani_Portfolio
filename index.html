@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Najah Rami Madani — HCI Engineer, UX/UI Designer & UX Researcher. 11 projects spanning UX research, UI design, Voice UI, Information Architecture and full-stack development." />
+  <title>Najah Rami Madani — HCI & Software Engineering Portfolio</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+
+  <!-- GSAP (animations) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ============================ Custom 3D Cursor ============================ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============================ Floating Background ============================ -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- ============================ Navigation ============================ -->
+  <nav class="nav" id="nav">
+    <a href="#hero" class="nav-logo" data-magnetic>
+      <span class="logo-mark">N<span class="logo-dot">.</span></span>
+      <span class="logo-text">Najah Madani</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link" data-i18n="navAbout">About</a></li>
+      <li><a href="#skills" class="nav-link" data-i18n="navSkills">Skills</a></li>
+      <li><a href="#certification" class="nav-link">Certification</a></li>
+      <li><a href="#projects" class="nav-link" data-i18n="navProjects">Projects</a></li>
+      <li><a href="#contact" class="nav-link" data-i18n="navContact">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Toggle language" data-magnetic>
+        <i class="fa-solid fa-language"></i>
+      </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" data-magnetic>
+        <span class="toggle-track">
+          <i class="fa-solid fa-sun icon-sun"></i>
+          <i class="fa-solid fa-moon icon-moon"></i>
+          <span class="toggle-thumb"></span>
+        </span>
+      </button>
+      <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile menu drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" data-i18n="navAbout">About</a></li>
+      <li><a href="#skills" data-i18n="navSkills">Skills</a></li>
+      <li><a href="#certification">Certification</a></li>
+      <li><a href="#projects" data-i18n="navProjects">Projects</a></li>
+      <li><a href="#contact" data-i18n="navContact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================ HERO ============================ -->
+  <header class="hero" id="hero">
+    <div class="hero-grid-bg"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-dot"></span>
+        <span data-i18n="heroBadge">HCI Engineer · UX/UI Designer · UX Researcher</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="title-line"><span class="title-text">Crafting</span></span>
+        <span class="title-line"><span class="title-text italic">human</span><span class="title-text">-</span><span class="title-text">first</span></span>
+        <span class="title-line"><span class="title-text gradient-text">digital</span> <span class="title-text">experiences.</span></span>
+      </h1>
+
+      <p class="hero-sub" data-i18n="heroSub" data-i18n-html="true">
+        Hi, I’m <strong>Najah Rami Madani</strong> — Software Engineering graduate specializing in Human-Computer Interaction (HCI) from Umm Al-Qura University. I combine UX research, UI design and information architecture with working knowledge of full-stack development (Vue.js, Node.js, MongoDB) to build intuitive, accessible, and effective digital products.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary" data-magnetic>
+          <span data-i18n="btnProjects">View Projects</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-ghost" data-magnetic>
+          <span data-i18n="btnContact">Get in touch</span>
+        </a>
+        <a href="cv/Najah_CV.pdf" class="btn btn-gold" target="_blank" data-magnetic>
+          <span data-i18n="btnCV">CV</span>
+          <i class="fa-solid fa-file-arrow-down"></i>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-num" data-count="11">0</span>
+          <span class="meta-label" data-i18n="metaProjects">Projects</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-num">2026</span>
+          <span class="meta-label" data-i18n="metaGraduation">Graduation</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-num">2</span>
+          <span class="meta-label" data-i18n="metaHajjSeasons">Hajj Seasons</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-num">1</span>
+          <span class="meta-label" data-i18n="metaUniversity">University</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-3d-scene">
+      <div class="tilt-card" data-tilt>
+        <div class="tilt-card-inner">
+          <div class="tilt-face front">
+            <div class="card-content">
+              <span class="card-eyebrow">Najah Rami</span>
+              <h3>HCI Engineer</h3>
+              <p>Makkah - Jeddah · KSA</p>
+              <div class="card-pills">
+                <span>UX Research</span>
+                <span>UI Design</span>
+                <span>VUI</span>
+              </div>
+            </div>
+          </div>
+          <div class="tilt-face back">
+            <p>"Design that respects cognitive limits wins."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#about" class="hero-scroll" aria-label="Scroll to about">
+      <span class="scroll-line"></span>
+      <span data-i18n="heroScroll">Scroll</span>
+    </a>
+  </header>
+
+  <!-- ============================ About ============================ -->
+  <section class="section about" id="about">
+    <div class="section-head">
+      <span class="section-tag" data-i18n="aboutSectionTag">01 — About</span>
+      <h2 class="section-title" data-i18n="aboutSectionTitle" data-i18n-html="true">A student of <span class="italic">interfaces</span>, not just <span class="gradient-text">screens</span>.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Professional Summary</h3>
+        <p>
+          Software Engineering graduate specializing in Human-Computer Interaction (HCI) from Umm Al-Qura University, with a strong foundation in User Experience (UX) research, User Interface (UI) design, and information architecture. Experienced in usability testing, user interviews, persona development, journey mapping, wireframing, prototyping, and accessibility (WCAG-aware design), applied across multiple academic and independent projects. Additional working knowledge of frontend and full-stack development (Vue.js, Node.js, MongoDB) and Agile project practices. Seeking to apply user-centered design and research skills to build intuitive, accessible, and effective digital products.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <h3>Education</h3>
+        <p><strong>Umm Al-Qura University — Makkah, Saudi Arabia</strong></p>
+        <p>Bachelor of Science in Software Engineering — Human-Computer Interaction (HCI).</p>
+        <p><em>Graduation year: 2026</em></p>
+      </div>
+
+      <div class="about-card">
+        <h3>Languages</h3>
+        <ul class="lang-list">
+          <li>
+            <span>Arabic</span>
+            <span class="lang-badge">Fluent (Native)</span>
+          </li>
+          <li>
+            <span>English</span>
+            <span class="lang-badge">Professional Working Proficiency</span>
+          </li>
+        </ul>
+        <p class="contact-heading"><strong data-i18n="aboutContactHeading">Contact</strong></p>
+        <p><i class="fa-solid fa-envelope"></i> najahrami@hotmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> (+966) 545 159 568</p>
+        <p><i class="fa-solid fa-location-dot"></i> Makkah Al-Mukarramah - Jeddah, KSA</p>
+        <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/najah-madani-389909407" target="_blank" rel="noopener">linkedin.com/in/najah-madani-389909407</a></p>
+      </div>
+    </div>
+
+    <h3 class="projects-group-title" id="experience" style="max-width:1280px;margin:4rem auto 1.5rem;"><i class="fa-solid fa-briefcase"></i> Work Experience</h3>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Customer Service Representative</h3>
+        <p><strong>Hajj Season 1446H</strong></p>
+        <ul>
+          <li>Welcomed and assisted pilgrims, answering inquiries and providing information on services, facilities, and accommodations.</li>
+          <li>Directed pilgrim flow and organized entry/exit operations at high-traffic service checkpoints.</li>
+          <li>Resolved complaints and service issues by coordinating directly with specialized support teams.</li>
+          <li>Supported pilgrims from diverse nationalities and cultural backgrounds, contributing to measurable improvements in overall service experience.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3>Customer Service Representative</h3>
+        <p><strong>Hajj Season 1445H</strong></p>
+        <ul>
+          <li>Coordinated pilgrim movement and traffic flow across multiple service locations during peak operational periods.</li>
+          <li>Supported field operations teams in managing daily logistics under high-pressure, time-sensitive conditions.</li>
+          <li>Guided pilgrims to assigned locations and available services, ensuring efficient access and reduced wait times.</li>
+          <li>Collaborated within cross-functional teams to maintain smooth, well-organized operations for large-scale crowds.</li>
+        </ul>
+      </div>
+
+      <div class="about-card">
+        <h3>Trainee, Crew Services</h3>
+        <p><strong>Saudi Arabian Airlines · 6 months</strong></p>
+        <ul>
+          <li>Supported crew transportation scheduling, tracking, daily operations, reporting, and follow-up within a professional aviation operations environment.</li>
+          <li>Assisted in monitoring and coordinating crew service schedules to ensure operational continuity.</li>
+          <li>Contributed to process documentation and observation follow-up, gaining exposure to operating procedures and internal systems.</li>
+          <li>Developed organizational, administrative, and team-collaboration skills within a fast-paced professional setting.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ Skills ============================ -->
+  <section class="section skills" id="skills">
+    <div class="section-head">
+      <span class="section-tag" data-i18n="skillsSectionTag">02 — Skills</span>
+      <h2 class="section-title" data-i18n="skillsSectionTitle" data-i18n-html="true">A toolkit built on <span class="italic">research</span> & <span class="gradient-text">craft</span>.</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-users skill-icon"></i>
+        <h3>Customer Service & Communication</h3>
+        <p>Served pilgrims from diverse nationalities across two Hajj seasons (1445H &amp; 1446H).</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-people-group skill-icon"></i>
+        <h3>Teamwork & Collaboration</h3>
+        <p>Collaborated in cross-functional teams across UX, SRS, IA, VUI and full-stack projects.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-clipboard-check skill-icon"></i>
+        <h3>Organization & Time Management</h3>
+        <p>Agile, Scrum, WBS and Gantt — I structure work into shippable milestones.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-triangle-exclamation skill-icon"></i>
+        <h3>Problem Solving</h3>
+        <p>Calm under pressure — proven across two Hajj seasons and rapid UX studies.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-magnifying-glass skill-icon"></i>
+        <h3>UX Research</h3>
+        <p>Usability testing, interviews, surveys, personas, journey maps, heuristic evaluation, content testing.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-pen-ruler skill-icon"></i>
+        <h3>UI / Wireframing</h3>
+        <p>Wireframing, prototyping and design systems in Figma. Accessibility-aware design.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-sitemap skill-icon"></i>
+        <h3>Information Architecture</h3>
+        <p>Sitemaps, user flows, card sorting, navigation structures and IA audits.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-microphone-lines skill-icon"></i>
+        <h3>Voice UI</h3>
+        <p>Dialogue flows, error handling, multimodal interaction, accessibility scenarios.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-code skill-icon"></i>
+        <h3>Software Engineering</h3>
+        <p>HTML, CSS, JavaScript, Vue.js, Node.js, Express.js, MongoDB, Mongoose, REST APIs, Git.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-file-lines skill-icon"></i>
+        <h3>SRS / Requirements</h3>
+        <p>Requirements engineering, SRS, use cases, stakeholder analysis.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-universal-access skill-icon"></i>
+        <h3>Accessibility (a11y)</h3>
+        <p>WCAG, inclusive design and accessibility evaluation.</p>
+      </div>
+      <div class="skill-card reveal">
+        <i class="fa-solid fa-file-word skill-icon"></i>
+        <h3>Microsoft Office</h3>
+        <p>Word, Excel and PowerPoint for reports, project docs and presentations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ Certification ============================ -->
+  <section class="section certification" id="certification">
+    <div class="section-head">
+      <span class="section-tag">Certifications</span>
+      <h2 class="section-title">My certificates</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>Generative AI in Hajj and Umrah</h3>
+        <p>SDAIA &amp; Umm Al-Qura University Research and Consulting Institute · 2023</p>
+        <img src="cv/certificate-hajj-ai.webp" alt="Generative AI in Hajj and Umrah certificate" loading="lazy" decoding="async" style="width:100%; border-radius:16px; margin-top:12px; object-fit:cover;" />
+      </div>
+
+      <div class="about-card">
+        <h3>Intellectual Property Rights in Academic Activities and Graduation Projects</h3>
+        <p>Umm Al-Qura University</p>
+        <img src="cv/certificate-intellectual-property.webp" alt="Intellectual Property Rights certificate" loading="lazy" decoding="async" style="width:100%; border-radius:16px; margin-top:12px; object-fit:cover;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ Projects ============================ -->
+  <section class="section projects" id="projects">
+    <div class="section-head">
+      <span class="section-tag" data-i18n="projectsSectionTag">03 — Projects</span>
+      <h2 class="section-title" data-i18n="projectsSectionTitle" data-i18n-html="true">Six featured projects.<br/><span class="gradient-text">Focused on research, systems, and impact.</span></h2>
+      <p class="section-desc">
+        Selected projects spanning UX research, UI design, information architecture, requirements and safety-critical HCI.
+        Open any card for details — show the rest of the projects right here.
+      </p>
+    </div>
+
+    <div class="projects-rail" id="projectsRail">
+      <div class="projects-group">
+        <h3 class="projects-group-title"><i class="fa-solid fa-seedling"></i> Featured Projects</h3>
+        <div class="projects-group-grid">
+          <article class="project-card" data-project="1" data-index="01">
+            <a href="project-01.html" target="_blank" rel="noopener" class="project-link">
+              <div class="pcard-cover"><img src="images/projects/ingredients/1.webp" alt="Screens from Ingredients app design" width="1000" height="625" loading="lazy" decoding="async" /></div>
+              <div class="pcard-top">
+                <span class="pcard-num">01</span>
+                <span class="pcard-cat">UX/UI Design · User Research</span>
+              </div>
+              <h3 class="pcard-title">The Ingredients App — UX/UI Design &amp; User Research</h3>
+              <p class="pcard-sub">Research into how users find recipes from the ingredients they already have, taken through user flows, wireframes, Figma prototypes and usability testing.</p>
+              <div class="pcard-tags">
+                <span>User Research</span><span>Figma</span><span>Hi-Fi Prototype</span><span>Usability Testing</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card" data-project="2" data-index="02">
+            <a href="project-02.html" target="_blank" rel="noopener" class="project-link">
+              <div class="pcard-cover"><img src="images/projects/layaqah/1.webp" alt="LAYAQAH athlete management application interface" width="1000" height="625" loading="lazy" decoding="async" /></div>
+              <div class="pcard-top">
+                <span class="pcard-num">02</span>
+                <span class="pcard-cat">Graduation Project · GP2</span>
+              </div>
+              <h3 class="pcard-title">LAYAQAH — Graduation Project · Sports Injury Tracking (GP2)</h3>
+              <p class="pcard-sub">A unified sports injury system with role-based dashboards, workflows, and accessibility-aware design.</p>
+              <div class="pcard-tags">
+                <span>3 roles</span><span>3 dashboards</span><span>Use cases</span><span>UI Gallery</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card" data-project="3" data-index="03">
+            <a href="project-03.html" target="_blank" rel="noopener" class="project-link">
+              <div class="pcard-cover"><img src="images/projects/ods/1.webp" alt="Order Delivery System UI mockups" width="1000" height="625" loading="lazy" decoding="async" /></div>
+              <div class="pcard-top">
+                <span class="pcard-num">03</span>
+                <span class="pcard-cat">SRS Document</span>
+              </div>
+              <h3 class="pcard-title">Order Delivery System (ODS) — SRS Document</h3>
+              <p class="pcard-sub">Software requirements specification covering use cases, UI mockups, and delivery workflow design.</p>
+              <div class="pcard-tags">
+                <span>SRS</span><span>Use Cases</span><span>6 UI mockups</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card" data-project="4" data-index="04">
+            <a href="project-04.html" target="_blank" rel="noopener" class="project-link">
+              <div class="pcard-cover"><img src="images/projects/stc/1.webp" alt="STC user research report" width="1000" height="625" loading="lazy" decoding="async" /></div>
+              <div class="pcard-top">
+                <span class="pcard-num">04</span>
+                <span class="pcard-cat">User Research</span>
+              </div>
+              <h3 class="pcard-title">Optimizing STC App Interface</h3>
+              <p class="pcard-sub">HCI research into the STC app with a focus on usability, colors, and offers placement.</p>
+              <div class="pcard-tags">
+                <span>6 participants</span><span>Content testing</span><span>Heuristics</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card" data-project="5" data-index="05">
+            <a href="project-05.html" target="_blank" rel="noopener" class="project-link">
+              <div class="pcard-cover"><img src="images/projects/eventhub/1.webp" alt="Event Hub navigation and UI concept" width="1000" height="625" loading="lazy" decoding="async" /></div>
+              <div class="pcard-top">
+                <span class="pcard-num">05</span>
+                <span class="pcard-cat">Information Architecture</span>
+              </div>
+              <h3 class="pcard-title">Event Hub — IA Redesign</h3>
+              <p class="pcard-sub">Navigation, sitemap, and information architecture redesign for an event-booking experience.</p>
+              <div class="pcard-tags">
+                <span>Sitemap</span><span>Card Sorting</span><span>Audit</span>
+              </div>
+            </a>
+          </article>
+          <article class="project-card" data-project="6" data-index="06">
+            <a href="project-06.html" target="_blank" rel="noopener" class="project-link">
+              <div class="pcard-cover"><img src="images/projects/hajj/1.webp" alt="Arafat boundary verification interaction screens" width="1000" height="625" loading="lazy" decoding="async" /></div>
+              <div class="pcard-top">
+                <span class="pcard-num">06</span>
+                <span class="pcard-cat">Safety-Critical HCI</span>
+              </div>
+              <h3 class="pcard-title">Hajj &amp; Umrah UX — Arafat Boundary Verification System</h3>
+              <p class="pcard-sub">A smart wristband using haptic-only feedback to keep pilgrims safely within the Arafat boundary.</p>
+              <div class="pcard-tags">
+                <span>13 Screens</span><span>Haptic UX</span><span>Offline-First</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+      <div aria-label="Additional Projects" class="projects-group projects-group--extra" hidden="" id="additionalProjects">
+<h3 class="projects-group-title"><i class="fa-solid fa-layer-group"></i> Additional Projects</h3>
+<div class="projects-group-grid" id="moreProjectsGrid">
+<article class="project-card" data-index="07" data-project="7">
+<a class="project-link" href="project-07.html" rel="noopener" target="_blank">
+<div class="pcard-cover"><img alt="Jahez order cancellation user journey" decoding="async" height="625" loading="lazy" src="images/projects/jahez/1.webp" width="1000"/></div>
+<div class="pcard-top">
+<span class="pcard-num">07</span>
+<span class="pcard-cat">User Research</span>
+</div>
+<h3 class="pcard-title">Jahez — Order Cancellation UX Research</h3>
+<p class="pcard-sub">Personas, journey maps, and user stories built around fixing one missing feature: a cancel button.</p>
+<div class="pcard-tags">
+<span>3 Personas</span><span>Journey Maps</span><span>User Stories</span>
+</div>
+</a>
+</article>
+<article class="project-card" data-index="08" data-project="8">
+<a class="project-link" href="project-08.html" rel="noopener" target="_blank">
+<div class="pcard-cover"><img alt="Digital Menu application screenshots" decoding="async" height="625" loading="lazy" src="images/projects/menu/1.webp" width="1000"/></div>
+<div class="pcard-top">
+<span class="pcard-num">08</span>
+<span class="pcard-cat">Full-Stack Development</span>
+</div>
+<h3 class="pcard-title">Digital Menu — Full-Stack Café Menu App</h3>
+<p class="pcard-sub">Vue 3, Node.js, and MongoDB Atlas powering a real-time digital menu with full CRUD.</p>
+<div class="pcard-tags">
+<span>Vue 3</span><span>Node.js</span><span>MongoDB</span>
+</div>
+</a>
+</article>
+<article class="project-card" data-index="09" data-project="9">
+<a class="project-link" href="project-09.html" rel="noopener" target="_blank">
+<div class="pcard-cover"><img alt="Ehsan and Tabaru heuristic evaluation cover" decoding="async" height="625" loading="lazy" src="images/projects/ehsan/1.webp" width="1000"/></div>
+<div class="pcard-top">
+<span class="pcard-num">09</span>
+<span class="pcard-cat">Heuristic Evaluation</span>
+</div>
+<h3 class="pcard-title">Usability Evaluation — Ehsan &amp; Tabaru</h3>
+<p class="pcard-sub">Nielsen's 10 Heuristics applied to two live Saudi charitable donation platforms.</p>
+<div class="pcard-tags">
+<span>Nielsen Heuristics</span><span>2 Platforms</span><span>NN/G Workbook</span>
+</div>
+</a>
+</article>
+<article class="project-card" data-index="10" data-project="10">
+<a class="project-link" href="project-10.html" rel="noopener" target="_blank">
+<div class="pcard-cover"><img alt="CareBot actual project UI screens" decoding="async" height="625" loading="lazy" src="images/projects/carebot/1.webp" width="1000"/></div>
+<div class="pcard-top">
+<span class="pcard-num">10</span>
+<span class="pcard-cat">UX/UI Design</span>
+</div>
+<h3 class="pcard-title">CareBot Project — Smart Companion for Elderly Care</h3>
+<p class="pcard-sub">A caregiving robot experience combining vital monitoring, medication reminders, family communication, and emergency response.</p>
+<div class="pcard-tags">
+<span>Elderly Care</span><span>UX/UI</span><span>Smart Companion</span>
+</div>
+</a>
+</article>
+<article class="project-card" data-index="11" data-project="11">
+<a class="project-link" href="project-11.html" rel="noopener" target="_blank">
+<div class="pcard-cover"><img alt="Barn’s Coffee voice ordering dialogue flow" decoding="async" height="625" loading="lazy" src="images/projects/vui/1.webp" width="1000"/></div>
+<div class="pcard-top"><span class="pcard-num">11</span><span class="pcard-cat">Voice User Interface</span></div>
+<h3 class="pcard-title">Barn’s Coffee — Voice Ordering Interface</h3>
+<p class="pcard-sub">Hands-free coffee ordering with clear dialogue flows, customization, confirmation, and error recovery.</p>
+<div class="pcard-tags"><span>Voice UI</span><span>Dialogue Flows</span><span>Drive-Thru</span></div>
+</a>
+</article>
+</div>
+</div>
+    </div>
+    <div class="view-more-wrap" style="text-align:center; margin-top:3rem;">
+      <button type="button" id="toggleMoreProjects" aria-controls="additionalProjects" aria-expanded="false" class="btn btn-gold btn-view-more" data-magnetic>
+        <span id="projectsToggleLabel">Show More Projects</span>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================ Contact ============================ -->
+  <section class="section contact" id="contact">
+    <div class="section-head">
+      <span class="section-tag" data-i18n="contactSectionTag">04 — Contact</span>
+      <h2 class="section-title" data-i18n="contactSectionTitle" data-i18n-html="true">Let's build <span class="italic">something</span> <span class="gradient-text">human</span>.</h2>
+    </div>
+
+    <div class="contact-grid">
+      <a href="mailto:najahrami@hotmail.com" class="contact-card" data-magnetic>
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email</span>
+        <strong>najahrami@hotmail.com</strong>
+      </a>
+      <a href="tel:+966545159568" class="contact-card" data-magnetic>
+        <i class="fa-solid fa-phone"></i>
+        <span>Phone</span>
+        <strong>(+966) 545 159 568</strong>
+      </a>
+      <a href="https://www.linkedin.com/in/najah-madani-389909407" target="_blank" rel="noopener" class="contact-card" data-magnetic>
+        <i class="fa-brands fa-linkedin"></i>
+        <span>LinkedIn</span>
+        <strong>Najah Rami Madani</strong>
+      </a>
+      <a class="contact-card" data-magnetic>
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Based in</span>
+        <strong>Makkah Al-Mukarramah - Jeddah, KSA</strong>
+      </a>
+      <a class="contact-card" data-magnetic>
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>University</span>
+        <strong>Umm Al-Qura University</strong>
+      </a>
+    </div>
+</section>
+
+  <!-- ============================ Footer ============================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="logo-mark">N<span class="logo-dot">.</span></span>
+        <span data-i18n="footerCrafted">Crafted with care · Makkah - Jeddah, KSA</span>
+      </div>
+      <p class="footer-note" data-i18n="footerNote">© 2026 Najah Rami Madani · HCI Portfolio · 11 Projects</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script defer src="translations.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="animations.js"></script>
+</body>
+</html>

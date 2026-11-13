@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Order Delivery System (ODS) software requirements specification page. Use cases, admin dashboard, UI mockups, and HCI-focused design details." />
+  <title>Order Delivery System (ODS) — SRS</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="detail-controls"><button type="button" class="detail-lang-toggle" id="langToggle" aria-label="التبديل إلى العربية" title="Switch language / تغيير اللغة"><i class="fa-solid fa-language" aria-hidden="true"></i> <span class="lang-current">العربية</span></button></div>
+  <main class="section pdetail">
+    <div class="pd-head">
+      <div>
+        <div class="pd-num">03</div>
+        <span class="pd-num-label">Project · 4 highlights below</span>
+      </div>
+      <div class="pd-title-section">
+        <h2 class="pd-title">Order Delivery System (ODS) — SRS Document</h2>
+        <div class="pd-meta"><span>SRS</span><span>Use Cases</span><span>6 UI Mockups</span><span>Customer · Admin</span></div>
+      </div>
+    </div>
+
+    <div class="pd-back" style="max-width:1100px;margin:0 auto 2rem;">
+      <a href="index.html" class="btn btn-ghost"><i class="fa-solid fa-chevron-left"></i> Back home</a>
+    </div>
+
+    <div class="pd-body">
+      <h4>Overview</h4>
+      <p>Software Requirements Specification for the Order Delivery System — an integrated mobile app for customers to place orders &amp; track deliveries, with an admin dashboard for managing orders, inventory, and delivery services. Compared against ToYou, Jahez, and Mrsool apps. Uses MVC architecture.</p>
+
+      <h4>Requirements coverage</h4>
+      <ul>
+        <li>Customer interface: account creation, login, product browsing, order submit &amp; track, payment, ratings.</li>
+        <li>Admin dashboard: order management, delivery services assignment, status filtering.</li>
+        <li>6 use cases with full scenarios for create-account, login, browsing, order management, payment.</li>
+        <li>Non-functional: performance (3s response, 5000 concurrent), reliability, 99.5% uptime, security, portability.</li>
+        <li>6 UI mockups included: splash, login, home, restaurants, product, side menu.</li>
+      </ul>
+
+      <h4>System goals</h4>
+      <ul>
+        <li>Simplify delivery order experience for customers.</li>
+        <li>Provide admins with a central operations dashboard.</li>
+        <li>Online payments via secure gateway (credit cards).</li>
+        <li>Customer service support for queries and concerns.</li>
+        <li>Mobile-first design across Android &amp; iOS.</li>
+      </ul>
+
+      <div class="pd-gallery-wrap">
+        <h4>Gallery</h4>
+        <div class="pd-gallery">
+          <a href="images/projects/ods/1.webp" target="_blank" rel="noopener" aria-label="Open ods project visual 1"><img src="images/projects/ods/1.webp" alt="Order Delivery System UI mockups — visual 1" loading="lazy" decoding="async" width="1000" height="625" /></a>
+          <a href="images/projects/ods/2.webp" target="_blank" rel="noopener" aria-label="Open ods project visual 2"><img src="images/projects/ods/2.webp" alt="Order Delivery System UI mockups — visual 2" loading="lazy" decoding="async" width="1000" height="625" /></a>
+          <a href="images/projects/ods/3.webp" target="_blank" rel="noopener" aria-label="Open ods project visual 3"><img src="images/projects/ods/3.webp" alt="Order Delivery System UI mockups — visual 3" loading="lazy" decoding="async" width="1000" height="625" /></a>
+        </div>
+      </div>
+
+      <h4>Najah's role</h4>
+      <p>Co-led this project as part of a 4-person team at Umm Al-Qura University (HCI / Software Engineering Department). Najah contributed to research, design, and validation phases — building skills in collaborative scoping, iterative prototyping, and evidence-based decision-making.</p>
+
+      <h4>Use Case Map (examples)</h4>
+      <p>UC-01 Create Account (User / Admin) — Core<br/>UC-02 Login — Core<br/>UC-03 Product Browsing — Core<br/>UC-04 Submit &amp; Track Order — Core<br/>UC-05 Order Management — Admin<br/>UC-06 Online Payment — Standard</p>
+
+    </div>
+  </main>
+  <script defer src="translations.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="animations.js"></script>
+</body>
+</html>

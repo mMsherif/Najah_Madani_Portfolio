@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Digital Menu — a full-stack Vue, Node.js, and MongoDB web app for managing a small café's menu, by Najah Rami Madani and team." />
+  <title>Digital Menu — Full-Stack Café Menu App</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="detail-controls"><button type="button" class="detail-lang-toggle" id="langToggle" aria-label="التبديل إلى العربية" title="Switch language / تغيير اللغة"><i class="fa-solid fa-language" aria-hidden="true"></i> <span class="lang-current">العربية</span></button></div>
+  <main class="section pdetail">
+    <div class="pd-head">
+      <div>
+        <div class="pd-num">08</div>
+        <span class="pd-num-label">Project · 4 highlights below</span>
+      </div>
+      <div class="pd-title-section">
+        <h2 class="pd-title">Digital Menu — Online Menu for a Small Café</h2>
+        <div class="pd-meta"><span>Vue 3</span><span>Node.js + Express</span><span>MongoDB Atlas</span><span>Full CRUD</span></div>
+      </div>
+    </div>
+
+    <div class="pd-back" style="max-width:1100px;margin:0 auto 2rem;">
+      <a href="index.html" class="btn btn-ghost"><i class="fa-solid fa-chevron-left"></i> Back home</a>
+    </div>
+
+    <div class="pd-body">
+      <h4>Overview</h4>
+      <p>A full-stack web application that replaces a small café's paper menu with a digital one. Staff can add, edit, and remove menu items in real time, with changes persisted to a cloud database and instantly reflected on the frontend — no page reloads.</p>
+
+      <h4>What this project taught me</h4>
+      <ul>
+        <li>Building a complete CRUD system end-to-end: Vue 3 frontend, Express REST API, MongoDB Atlas database.</li>
+        <li>Structuring a Mongoose schema and connecting a real cloud database to a live single-page app.</li>
+        <li>Debugging real integration issues (frontend/backend connection, CORS, initial DB creation) rather than working from a spec alone.</li>
+        <li>Responsive UI design with Flexbox for a clean, mobile-friendly menu display.</li>
+      </ul>
+
+      <div class="pd-stats">
+        <div class="pd-stat"><span class="pd-stat-num">4</span><span class="pd-stat-label">REST Endpoints</span></div>
+        <div class="pd-stat"><span class="pd-stat-num">3</span><span class="pd-stat-label">Data Fields</span></div>
+        <div class="pd-stat"><span class="pd-stat-num">100%</span><span class="pd-stat-label">Real-time Sync</span></div>
+        <div class="pd-stat"><span class="pd-stat-num">4</span><span class="pd-stat-label">Team Members</span></div>
+      </div>
+
+      <h4>Stack &amp; architecture</h4>
+      <ul>
+        <li><strong>Frontend:</strong> Vue 3 SPA + Axios — add/edit form, card-based menu display, edit/delete actions.</li>
+        <li><strong>Backend:</strong> Node.js + Express — <code>GET /menu</code>, <code>POST /menu</code>, <code>PUT /menu/:id</code>, <code>DELETE /menu/:id</code>, with CORS enabled and basic field validation.</li>
+        <li><strong>Database:</strong> MongoDB Atlas + Mongoose — each item stores name, price, and category, persisted in a <code>menus</code> collection.</li>
+      </ul>
+
+      <h4>Project flow</h4>
+      <p>User fills the form → Vue sends an Axios request → Express receives it and talks to MongoDB Atlas → the item is stored → the response updates the menu list in real time → edits and deletes save back to MongoDB automatically.</p>
+
+      <h4>Challenges &amp; solutions</h4>
+      <ul>
+        <li><strong>Frontend ↔ backend connection:</strong> solved with Axios HTTP requests to the Node API.</li>
+        <li><strong>Database not appearing:</strong> resolved by adding the first document through the Vue form, which auto-created the DB.</li>
+        <li><strong>Responsive styling:</strong> handled with CSS Flexbox and media queries.</li>
+      </ul>
+
+      <div class="pd-gallery-wrap">
+        <h4>Gallery</h4>
+        <div class="pd-gallery">
+          <a href="images/projects/menu/1.webp" target="_blank" rel="noopener" aria-label="Open menu project visual 1"><img src="images/projects/menu/1.webp" alt="Digital Menu application screenshots — visual 1" loading="lazy" decoding="async" width="1000" height="625" /></a>
+          <a href="images/projects/menu/2.webp" target="_blank" rel="noopener" aria-label="Open menu project visual 2"><img src="images/projects/menu/2.webp" alt="Digital Menu application screenshots — visual 2" loading="lazy" decoding="async" width="1000" height="625" /></a>
+          <a href="images/projects/menu/3.webp" target="_blank" rel="noopener" aria-label="Open menu project visual 3"><img src="images/projects/menu/3.webp" alt="Digital Menu application screenshots — visual 3" loading="lazy" decoding="async" width="1000" height="625" /></a>
+        </div>
+      </div>
+
+      <h4>Najah's role</h4>
+      <p>Contributed across frontend, backend, database integration, and testing as part of a 4-person team — all members worked collaboratively across the full stack rather than in strict silos.</p>
+    </div>
+  </main>
+  <script defer src="translations.js"></script>
+  <script defer src="main.js"></script>
+  <script defer src="animations.js"></script>
+</body>
+</html>
