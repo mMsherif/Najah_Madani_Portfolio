@@ -309,30 +309,6 @@
 
   // ---------- 10. SVG-cursor smooth follow (already done in main.js) ----------
 
-  // ---------- 11. STATS COUNTER ----------
-  document.querySelectorAll('[data-count]').forEach(el => {
-    const target = parseInt(el.dataset.count, 10);
-    ScrollTrigger.create({
-      trigger: el,
-      start: 'top 85%',
-      once: true,
-      onEnter: () => {
-        gsap.fromTo(el,
-          { textContent: 0 },
-          {
-            textContent: target,
-            duration: 1.6,
-            ease: 'power2.out',
-            snap: { textContent: 1 },
-            onUpdate: function() {
-              el.textContent = Math.floor(parseFloat(el.textContent));
-            }
-          }
-        );
-      }
-    });
-  });
-
   // ---------- 12. CONTACT CARDS ----------
   gsap.utils.toArray('.contact-card').forEach((c, i) => {
     gsap.from(c, {

@@ -275,27 +275,47 @@
     });
   });
 
-  // ---------- 10. COUNTER ANIMATION FOR HERO META ----------
-  const counters = document.querySelectorAll('[data-count]');
-  const counterObs = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const target = parseInt(el.dataset.count, 10);
-        let cur = 0;
-        const step = Math.max(1, Math.ceil(target / 30));
-        const tick = () => {
-          cur += step;
-          if (cur >= target) { el.textContent = target; return; }
-          el.textContent = cur;
-          requestAnimationFrame(tick);
-        };
-        tick();
-        counterObs.unobserve(el);
+  // ---------- 10. HERO METRICS: ONE, SMOOTH, ACCESSIBLE ANIMATION ----------
+  const heroMetrics = document.querySelector('.hero-meta');
+  if (heroMetrics) {
+    const metrics = Array.from(heroMetrics.querySelectorAll('[data-count]'));
+    const year = heroMetrics.querySelector('.meta-num--year');
+    const targets = metrics.map(el => ({ el, value: Number(el.dataset.count) || 0 }));
+    let played = false;
+    const renderFinal = () => {
+      targets.forEach(({ el, value }) => { el.textContent = String(value); });
+      year?.classList.add('is-counter-visible');
+    };
+    const animateOnce = () => {
+      if (played) return;
+      played = true;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        renderFinal(); return;
       }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(c => counterObs.observe(c));
+      year?.classList.add('is-counter-visible');
+      const started = performance.now();
+      const duration = 1500;
+      const frame = (now) => {
+        const p = Math.min((now - started) / duration, 1);
+        const ease = 1 - Math.pow(1 - p, 3);
+        targets.forEach(({el, value}) => {
+          el.textContent = String(Math.round(value * ease));
+        });
+        if (p < 1) requestAnimationFrame(frame);
+        else renderFinal();
+      };
+      requestAnimationFrame(frame);
+    };
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        if (entries.some(entry => entry.isIntersecting)) {
+          observer.disconnect();
+          animateOnce();
+        }
+      }, { threshold: 0.2 });
+      observer.observe(heroMetrics);
+    } else animateOnce();
+  }
 
   // ---------- 11. KEYBOARD SHORTCUT FOR THEME ----------
   window.addEventListener('keydown', (e) => {

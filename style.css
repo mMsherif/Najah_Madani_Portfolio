@@ -2292,3 +2292,110 @@ html[lang="ar"] .hero-title .title-line { overflow:visible; }
 @media (max-width: 760px) {
   #projects, #additionalProjects { scroll-margin-top: 80px; }
 }
+
+/* Image viewer for individual project galleries. No page navigation or external library. */
+.pd-gallery a { cursor: zoom-in; }
+.pd-lightbox[hidden], .pd-lightbox [hidden] { display: none !important; }
+.pd-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  place-items: center;
+  padding: clamp(.75rem, 2vw, 1.5rem);
+  background: rgba(6, 10, 18, .94);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  direction: ltr;
+}
+.pd-lightbox__panel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 1280px);
+  max-height: calc(100dvh - 1.5rem);
+  color: #fff;
+}
+.pd-lightbox__close,
+.pd-lightbox__nav {
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(23, 31, 44, .86);
+  color: #fff;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.pd-lightbox__close {
+  align-self: flex-end;
+  width: 44px;
+  height: 44px;
+  font: 30px/1 Arial, sans-serif;
+  margin-bottom: .5rem;
+}
+.pd-lightbox__stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+}
+.pd-lightbox__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 10rem);
+  object-fit: contain;
+  border-radius: 8px;
+}
+.pd-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  font: 38px/1 Arial, sans-serif;
+  z-index: 1;
+}
+.pd-lightbox__prev { left: .25rem; }
+.pd-lightbox__next { right: .25rem; }
+.pd-lightbox__close:hover, .pd-lightbox__nav:hover,
+.pd-lightbox__close:focus-visible, .pd-lightbox__nav:focus-visible {
+  background: rgba(71, 85, 105, .96);
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.pd-lightbox__footer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  min-height: 2.5rem;
+  padding: .65rem .3rem 0;
+  font: 400 .85rem/1.45 'Inter', Arial, sans-serif;
+}
+.pd-lightbox__caption { margin: 0; color: #e2e8f0; text-align: center; }
+.pd-lightbox__count { flex: none; color: #fff; font-variant-numeric: tabular-nums; }
+@media (max-width: 600px) {
+  .pd-lightbox__panel { max-height: calc(100dvh - 1rem); }
+  .pd-lightbox__close { width: 42px; height: 42px; }
+  .pd-lightbox__nav { width: 40px; height: 40px; background: rgba(23,31,44,.9); }
+  .pd-lightbox__prev { left: 0; }
+  .pd-lightbox__next { right: 0; }
+  .pd-lightbox__image { max-height: calc(100dvh - 11rem); }
+  .pd-lightbox__footer { gap: .75rem; font-size: .75rem; flex-wrap: wrap; }
+}
+
+/* Graceful hero graduation-year reveal; the other numbers count up in main.js. */
+.meta-num--year.is-counter-visible { animation: metric-year-reveal 850ms ease-out both; }
+@keyframes metric-year-reveal {
+  from { opacity: .45; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .meta-num--year.is-counter-visible { animation: none; }
+}
