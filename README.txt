@@ -8,14 +8,14 @@ Deployment:
 
 Updates included:
 - Updated CV (cv/Najah_CV.pdf) with the newly provided PDF.
-- Six featured projects initially visible on the homepage; five more reveal inline (11 total).
+- Six featured projects initially visible on the homepage; seven more reveal inline (13 total).
 - Added Barn's Coffee voice interface as project 11, with its own detail page.
 - Sourced screenshots and project diagrams from the user-provided PDFs; images were exported as lightweight WebP files.
 - Re-cropped and re-framed Jahez storyboard, Event Hub screens, Digital Menu UI, STC study evidence, Barn’s voice interaction diagram, and Hajj wireframes. Editorial framing is distinct from actual app screenshots; no fabricated screenshots.
 - CareBot image comes from the supplied screenshot.
 - Ehsan/Tabaru image is a clearly labeled editorial cover; no source screenshot or report for it was supplied.
 - Images have explicit paths, reserved dimensions and lazy loading. No runtime image-extension probes.
-- Show More Projects below featured cards toggles all five additional project cards inline, switching to Show Less Projects when expanded. No navigation to another page.
+- Show More Projects below featured cards toggles all seven additional project cards inline, switching to Show Less Projects when expanded. No navigation to another page.
 - Hero View Projects scrolls to the Projects section; fixed navigation offset accounted for.
 - Removed orphaned Loading Portfolio HTML text that was visibly stuck at the top of the previous revision.
 - English/Arabic switch on every page, preserved across navigation using browser localStorage.
